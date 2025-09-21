@@ -16,7 +16,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'   # 'microsoft' is fine too
+          distribution: 'temurin' 
           java-version: '17'
 
       - name: Build with Maven
@@ -56,3 +56,4 @@ jobs:
           package: '*.jar'
 
           
+
