@@ -56,8 +56,9 @@ jobs:
         with:
           app-name: 'lloyds-mortgage-calculator'
           slot-name: 'Production'
-          package: '*.jar'
+          package: backend/target/mortgage-calculator-0.0.1-SNAPSHOT.jar
 
           
+
 
 
