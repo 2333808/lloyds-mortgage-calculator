@@ -23,9 +23,10 @@ Endpoints:
   - If the backend is not running, the app falls back to a local calculation (notice banner).
 
   - After any change in the frontend (including index.html):
-    cd frontend
-    npm run build:ship
-  
+  ```bash
+  cd frontend
+  npm run build:ship
+  ```
 
 ## Test
 ```bash
