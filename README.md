@@ -20,6 +20,8 @@ Endpoints:
     "mortgageType": "repayment"
   }
   ```
+  - azure website: https://lloyds-mortgage-calculator.azurewebsites.net/
+    
   - If the backend is not running, the app falls back to a local calculation (notice banner).
 
   - After any change in the frontend (including index.html):
