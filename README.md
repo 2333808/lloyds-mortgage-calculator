@@ -19,10 +19,11 @@ Endpoints:
     "annualRatePct": 4.5,
     "mortgageType": "repayment"
   }
+  ```
+  - If the backend is not running, the app falls back to a local calculation (notice banner).
 
-  If the backend is not running, the app falls back to a local calculation (notice banner).
-
-  After any change in the frontend (including index.html):
+  - After any change in the frontend (including index.html):
+  ```bash
   cd frontend
   npm run build:ship
   ```
@@ -32,3 +33,4 @@ Endpoints:
 cd C:\Users\rodyp\OneDrive\Escritorio\lloyds-mortgage-calculator\backend
 mvn test
 ```
+<img width="2870" height="1598" alt="Screenshot 2025-09-21 142645" src="https://github.com/user-attachments/assets/facc0c3f-f05c-41e0-aefd-254c30b62e8b" />
