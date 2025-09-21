@@ -2,7 +2,8 @@ name: Build and deploy JAR app to Azure Web App - lloyds-mortgage-calculator
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -10,18 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Java
+      - name: Set up Java version
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin' 
           java-version: '17'
+          distribution: 'microsoft'
 
-      - name: Build with Maven
-        working-directory: backend
-        run: mvn -B -DskipTests package
+      - name: Build with Maven (backend)
+        run: mvn clean package --file backend/pom.xml
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -35,12 +36,13 @@ jobs:
     permissions:
       id-token: write
       contents: read
+  
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: java-app
-
+      
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -49,6 +51,7 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_90705EBC278343388E315F00B031B184 }}
 
       - name: Deploy to Azure Web App
+        id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'lloyds-mortgage-calculator'
@@ -56,4 +59,5 @@ jobs:
           package: '*.jar'
 
           
+
 
