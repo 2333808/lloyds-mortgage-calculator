@@ -32,3 +32,4 @@ Endpoints:
 cd C:\Users\rodyp\OneDrive\Escritorio\lloyds-mortgage-calculator\backend
 mvn test
 ```
+<img width="2870" height="1598" alt="Screenshot 2025-09-21 142645" src="https://github.com/user-attachments/assets/facc0c3f-f05c-41e0-aefd-254c30b62e8b" />
