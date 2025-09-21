@@ -61,7 +61,6 @@ export default function App() {
   const localInterest = useMemo(() => localTotalPaid - loanAmount, [localTotalPaid, loanAmount])
 
   useEffect(() => {
-    // Try backend API if configured (env). Fallback to local calc if error.
     async function run() {
       try {
         setApiError('')
@@ -74,7 +73,7 @@ export default function App() {
         setRemoteTotal(res.totalPaid)
       } catch (e: any) {
         setApiError(e?.message || 'API error')
-        setUseApi(false) // disable API if failing
+        setUseApi(false) 
       }
     }
     run()
