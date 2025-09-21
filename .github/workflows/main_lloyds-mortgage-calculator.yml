@@ -22,7 +22,7 @@ jobs:
           distribution: 'microsoft'
 
       - name: Build with Maven (backend)
-        run: mvn clean package --file backend/pom.xml
+        run: mvn -f backend/pom.xml clean package -DskipTests
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -56,9 +56,10 @@ jobs:
         with:
           app-name: 'lloyds-mortgage-calculator'
           slot-name: 'Production'
-          package: backend/target/mortgage-calculator-0.0.1-SNAPSHOT.jar
+          package: '*.jar'   
 
           
+
 
 
 
