@@ -19,13 +19,13 @@ Endpoints:
     "annualRatePct": 4.5,
     "mortgageType": "repayment"
   }
-
-  If the backend is not running, the app falls back to a local calculation (notice banner).
-
-  After any change in the frontend (including index.html):
-  cd frontend
-  npm run build:ship
   ```
+  - If the backend is not running, the app falls back to a local calculation (notice banner).
+
+  - After any change in the frontend (including index.html):
+  - cd frontend
+  - npm run build:ship
+  
 
 ## Test
 ```bash
